@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<form method="post" id="mturk_form" action="post1.php" name="mturk_form">
+			<input class="mturk" type="text" name="url1" value="" placeholder="this will be sent"><br>
+			<input class="mturk" type="text" name="url2" value="" placeholder="this will be sent"><br>
+			<input type="text" name="url3" value="" placeholder="this will NOT be sent"><br>
+			<input id="submitButton" type="submit" name="Submit" value="Submit">
+		</form>
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>   
+		 <script src="../croco4mturk.js" type="text/javascript"></script> 
+		<script>     
+			//this can be used to test it locally and see what's happen.
+			var testenv = true;
+		</script> 
+	</body>
+</html>
