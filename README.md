@@ -39,5 +39,5 @@ NB: the library works on sandbox and mturk (not tested yet). the post is changed
 If interested or anything else pls contact [me](http://stefanotranquillini.me) or [pavel](http://kucherbaev.com)
 
 ###VERSIONS:
-0.2 **CURRENT**: Post to original page is now Syncronous. Original page can respond with a *JSON array* containing objects as `{id: ..,value:..}`. These objects are sent back to Mturk with ID and VALUE.
-0.1 - First version
+- 0.2 **CURRENT**: Post to original page is now Syncronous. Original page can respond with a *JSON array* containing objects as `{id: ..,value:..}`. These objects are sent back to Mturk with ID and VALUE.
+- 0.1 - First version
