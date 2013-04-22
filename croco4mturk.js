@@ -36,7 +36,19 @@ $(document).ready(function() {
 	function() {
 		var action = $("form").attr("action");
 		//do an asyn post here  with all the form data.
-		$.post(action, $("form").serialize());
+		// $.post(action, $("form").serialize());   
+	   	 $.ajax({
+			  type: 'POST',
+			  url: action,
+			  data: $("form").serialize(),
+			  success: function(data){
+			                    $.each($.parseJSON(data), function(i,el) {   
+									  var input = $('<input/>').attr({ type: 'hidden', id: el.id, name: el.id, value: el.value, "class": "mturk" }) ;
+								      $("form").append(input);
+								    });
+			            },
+			  async:false
+			});
 		if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
 			$("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
 		} else {
@@ -44,8 +56,10 @@ $(document).ready(function() {
 		}
 		//REMOVE THIS LINE 
 		if (testenv)
-			$("form").attr("action", "post2.php");               
-		$("form").append("<input class=\"mturk\" type=\"hidden\" id=\"assignmentId\" name=\"assignmentId\" value=\"" + gup('assignmentId') + "\">")
+			$("form").attr("action", "post2.php");          
+			var input = $('<input/>').attr({ type: 'hidden', id: 'assignmentId', name: 'assignmentId', value: gup('assignmentId'),"class": "mturk" });  
+			$("form").append(input);         
+		// $("form").append("<input class=\"mturk\" type=\"hidden\" id=\"assignmentId\" name=\"assignmentId\" value=\"" + gup('assignmentId') + "\">")
 		//disable all the fields that does not have to send to mturk.         
 		var fields = $('form input:not(.mturk) ');
 		fields.attr("disabled", "disabled");
