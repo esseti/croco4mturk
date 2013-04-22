@@ -38,7 +38,9 @@ NB: the library works on sandbox and mturk (not tested yet). the post is changed
 ## Contacts
 If interested or anything else pls contact [me](http://stefanotranquillini.me) or [pavel](http://kucherbaev.com)
 
-###VERSIONS:
+
+
+##VERSIONS:
 - 0.2.1 **CURRENT**: 
   - Add control on where the page is run. If it's on Mturk, data are sent to local post and Mturk, otherwise only to local post.
   - Mturk data (HitId and AssigmentId) are sent to the local post.
