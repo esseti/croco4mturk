@@ -1,11 +1,11 @@
 # CrowdComputer 4 Mechanical Turk #
 
 ## Intro ##
-We are a [group](http://www.lifeparticipation.org/) of researcher from [Univeristy of Trento](http://disi.unitn.it/) working on Crowdsourcing.
+We are a [group](http://www.lifeparticipation.org/) of researchers from [Univeristy of Trento](http://disi.unitn.it/) working on Crowdsourcing.
 
-We are bulding a new platform for crwodsourcing, the [**CROWDCOMPUTER**](http://www.crowdcomputer.org) that amongs other features allow you to separate the data of your **application** (so what stays in your control and that is run on your server) from the **platform** (who provides you with the base actions to crwodsource a task).
+We are bulding a new platform for crowdsourcing, the [**CROWDCOMPUTER**](http://www.crowdcomputer.org) that amongs other features allow you to separate the data of your **application** (so what stays in your control and that is run on your server) from the **platform** (which provides you with the base actions to crowdsource a task).
 
-[Amazon Mecanical Turk](https://www.mturk.com) is the most known and used platfom, and as only few knows it also allow you to have the UI on **external** (see [amazon reference page](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ExternalQuestionArticle.html) )applications. You can create your html page and use it to recive/send data from/to Mturk. *NB: you have to use APIs or Console*
+[Amazon Mecanical Turk](https://www.mturk.com) is the most known and used platfom, and as only few knows, it also allows you to have the UI on **external** (see [amazon reference page](http://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_ExternalQuestionArticle.html) )applications. You can create your html page and use it to receive/send data from/to MTURK. *NB: you have to use APIs or Console*
 Yet, **ALL** the form data are sent back to Mturk, if you follow the guidelines and use the form as expleined there. 
 
 Ideally you **CAN NOT** decide to keep some data on your side and just send back a subset of them to Mturk.
