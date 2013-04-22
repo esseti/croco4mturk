@@ -26,7 +26,7 @@ Ideally you **CAN NOT** decide to keep some data on your side and just send back
 ## Example of usages
 Check the example into the *example* folder.
 
-To run it you need a **PHP** server, like (MAMP)[http://www.mamp.info/en/index.html]
+To run it you need a **PHP** server, like [MAMP](http://www.mamp.info/en/index.html)
 
 - The form in the page has 3 fields. 
 - The form posts to **post1.php** which stores the post data to **mypost.txt**. this is the post that runs on your server.
