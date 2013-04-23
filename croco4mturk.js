@@ -76,12 +76,11 @@ $(document).ready(function() {
 			});                
 			
 		//this function just checks where to send the data      
-		                 $("form").attr("action",gup("turkSubmitTo"));
-		// if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
-			// $("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
-		// } else {
-			// $("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
-		// }     
+		if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
+			$("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
+		} else {
+			$("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
+		}     
 		//this is for testenv : set to post2.php the second post and not to mturk     
 		// if (typeof testenv === "undefined")       
 			// var testenv= false;
