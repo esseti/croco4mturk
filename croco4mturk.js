@@ -76,7 +76,9 @@ $(document).ready(function() {
 		} else {
 			$("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
 		}     
-		//this is for testenv : set to post2.php the second post and not to mturk
+		//this is for testenv : set to post2.php the second post and not to mturk     
+		if (typeof testenv === "undefined")       
+			var testenv= false;
 		if (testenv)
 			$("form").attr("action", "post2.php");
 			          
