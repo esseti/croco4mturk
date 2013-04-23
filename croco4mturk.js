@@ -55,7 +55,9 @@ $(document).ready(function() {
 		//assignmetID is of mturk class, so it's store. This is mandatory from MTurk
 		var assignmentId = $('<input/>').attr({ type: 'hidden', id: 'assignmentId', name: 'assignmentId', value: gup('assignmentId'),"class": "mturk" });  
 	    $("form").append(assignmentId); 
-	   
+	                                         
+		
+	
 	
 		//do an asyn post here  with all the form data to the original URL.
 	   	 $.ajax({
@@ -74,7 +76,7 @@ $(document).ready(function() {
 			});                
 			
 		//this function just checks where to send the data      
-		                 $("form").attr("action",gup(turkSubmitTo));
+		                 $("form").attr("action",gup("turkSubmitTo"));
 		// if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
 			// $("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
 		// } else {
