@@ -5,7 +5,9 @@ function gup(name) {
 	var regexS = "[\\?&]" + name + "=([^&#]*)";
 	var regex = new RegExp(regexS);
 	var tmpURL = window.location.href;
-	var results = regex.exec(tmpURL);
+	var results = regex.exec(tmpURL); 
+	if (results==null)   
+		return null;
  	return results[1];
 }
 
@@ -33,7 +35,7 @@ $(document).ready(function() {
 	//
 	if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE") {
 		// If we're previewing, disable the button and give it a helpful message
-		$("form input[type=submit]").disabled = true;
+		$("form input[type=submit]").prop(disabled,true);
 		$("form input[type=submit]").attr("value", "You must ACCEPT the HIT before you can submit the results.");
 	}
 
@@ -41,7 +43,7 @@ $(document).ready(function() {
 	$("form input[type=submit]").click(
 
 	function() {                       
-		 $("form input[type=submit]").disabled = true;    
+		 $("form input[type=submit]").prop(disabled,true); 
 		 $("form input[type=submit]").attr("value", "Sending data, please wait");    
 		var action = $("form").attr("action");
 		//add hitid and assignmentID to form data.
