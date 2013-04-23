@@ -7,7 +7,7 @@ function gup(name) {
 	var tmpURL = window.location.href;
 	var results = regex.exec(tmpURL); 
 	if (results==null)   
-		return null;
+		return "";
  	return results[1];
 }
 
@@ -49,10 +49,13 @@ $(document).ready(function() {
 		//add hitid and assignmentID to form data.
 		// hit id is not of mturk class, so it's not stored twice in MTURK results
 		var hitId = $('<input/>').attr({ type: 'hidden', id: 'hitID', name: 'hitID', value: gup('hitId')}) ;
-	    $("form").append(hitId);   
+	    $("form").append(hitId);    
+		var wokerID = $('<input/>').attr({ type: 'hidden', id: 'assignmentId', name: 'assignmentId', value: gup('workerID')});  
+		$("form").append(wokerID);
 		//assignmetID is of mturk class, so it's store. This is mandatory from MTurk
 		var assignmentId = $('<input/>').attr({ type: 'hidden', id: 'assignmentId', name: 'assignmentId', value: gup('assignmentId'),"class": "mturk" });  
-	    $("form").append(assignmentId);       
+	    $("form").append(assignmentId); 
+	   
 	
 		//do an asyn post here  with all the form data to the original URL.
 	   	 $.ajax({
@@ -70,12 +73,13 @@ $(document).ready(function() {
 			  async:false
 			});                
 			
-		//this function just checks where to send the data
-		if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
-			$("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
-		} else {
-			$("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
-		}     
+		//this function just checks where to send the data      
+		                 $("form").attr("action",gup(turkSubmitTo));
+		// if (document.referrer && (document.referrer.indexOf('workersandbox') != -1)) {
+			// $("form").attr("action", "http://workersandbox.mturk.com/mturk/externalSubmit");
+		// } else {
+			// $("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
+		// }     
 		//this is for testenv : set to post2.php the second post and not to mturk     
 		// if (typeof testenv === "undefined")       
 			// var testenv= false;
