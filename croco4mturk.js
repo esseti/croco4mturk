@@ -35,7 +35,7 @@ $(document).ready(function() {
 	//
 	if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE") {
 		// If we're previewing, disable the button and give it a helpful message
-		$("form input[type=submit]").prop(disabled,true);
+		$("form input[type=submit]").prop("disabled",true);
 		$("form input[type=submit]").attr("value", "You must ACCEPT the HIT before you can submit the results.");
 	}
 
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	$("form input[type=submit]").click(
 
 	function() {                       
-		 $("form input[type=submit]").prop(disabled,true); 
+		 $("form input[type=submit]").prop("disabled",true); 
 		 $("form input[type=submit]").attr("value", "Sending data, please wait");    
 		var action = $("form").attr("action");
 		//add hitid and assignmentID to form data.
@@ -82,7 +82,7 @@ $(document).ready(function() {
 			          
 		//disable all the fields that does not have to send to mturk.         
 		var fields = $('form input:not(.mturk) ');
-		fields.attr("disabled", "disabled");
+		fields.prop("disabled", true);
 		//this disable also the send, so we have to submit the form to mturk
 		$("form").submit();
 		//here the form is sent to mturk.
