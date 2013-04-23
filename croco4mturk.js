@@ -77,10 +77,10 @@ $(document).ready(function() {
 			$("form").attr("action", "http://www.mturk.com/mturk/externalSubmit");
 		}     
 		//this is for testenv : set to post2.php the second post and not to mturk     
-		if (typeof testenv === "undefined")       
-			var testenv= false;
-		if (testenv)
-			$("form").attr("action", "post2.php");
+		// if (typeof testenv === "undefined")       
+			// var testenv= false;
+		// if (testenv)
+			// $("form").attr("action", "post2.php");
 			          
 		//disable all the fields that does not have to send to mturk.         
 		var fields = $('form input:not(.mturk) ');
