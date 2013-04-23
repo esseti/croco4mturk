@@ -41,7 +41,11 @@ If interested or anything else pls contact [me](http://stefanotranquillini.me) o
 
 
 ##VERSIONS:
-- 0.2.1 **CURRENT**: 
+- 0.2.2 **CURRENT**: 
+  - url of mturk is taken from the parameters.
+  - workerId is sent back to local post.
+  - shows a message when the HIT is not accepted.
+- 0.2.1:
   - Add control on where the page is run. If it's on Mturk, data are sent to local post and Mturk, otherwise only to local post.
   - Mturk data (HitId and AssigmentId) are sent to the local post.
 - 0.2: 
