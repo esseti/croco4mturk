@@ -19,14 +19,14 @@ Ideally you **CAN NOT** decide to keep some data on your side and just send back
 - add the `class="mturk"` class to each input fields you want to send back to MTURK. Each input field that has as class "mturk" is sent to mturk.
 - add at the bottom of your HTML page this script:
   - Jquery: `<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>`   
-  -	The library: `<script src="croco4mturk.js" type="text/javascript"></script>` change the location accordingly. Or link the lib directly from github
+  -	The library: `<script src="croco4mturk.js" type="text/javascript"></script>` change the location accordingly. Or link the lib directly from github `<script src="https://raw.github.com/esseti/croco4mturk/master/croco4mturk.js" type="text/javascript"></script>`
 - now create your task using the External Page execution. **NB: this can be done via API or probably via Console, we are working on creating an easy way to do this**
 - When executed tasks will be run on your website where you will store **ALL** the form data while only the **mturk fields** will be sent back to MTURK
 
 ## Example of usages
 Check the example into the *example* folder.
 
-To run it you need a **PHP** server, like (MAMP)[http://www.mamp.info/en/index.html]
+To run it you need a **PHP** server, like [MAMP](http://www.mamp.info/en/index.html)
 
 - The form in the page has 3 fields. 
 - The form posts to **post1.php** which stores the post data to **mypost.txt**. this is the post that runs on your server.
@@ -38,6 +38,13 @@ NB: the library works on sandbox and mturk (not tested yet). the post is changed
 ## Contacts
 If interested or anything else pls contact [me](http://stefanotranquillini.me) or [pavel](http://kucherbaev.com)
 
-###VERSIONS:
-- 0.2 **CURRENT**: Post to original page is now Syncronous. Original page can respond with a *JSON array* containing objects as `{id: ..,value:..}`. These objects are sent back to Mturk with ID and VALUE.
-- 0.1 - First version
+
+
+##VERSIONS:
+- 0.2.1 **CURRENT**: 
+  - Add control on where the page is run. If it's on Mturk, data are sent to local post and Mturk, otherwise only to local post.
+  - Mturk data (HitId and AssigmentId) are sent to the local post.
+- 0.2: 
+  - Post to original page is now Syncronous. 
+  - Original page can respond with a *JSON array* containing objects as `{id: ..,value:..}`. These objects are sent back to Mturk with ID and VALUE.
+- 0.1: First version
